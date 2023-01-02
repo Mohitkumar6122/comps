@@ -1,27 +1,43 @@
-import React from 'react'
-import Button from './Button'
+import React from "react";
+import Button from "./Button";
+import {GoBell, GoCloudDownload, GoDatabase} from 'react-icons/go'
 
 function App() {
+  
   return (
     <div>
-      App
+      {/* <div className="text-3xl font-bold underline">App</div> */}
       <div>
-        <Button> HIHIHIHI </Button>
+        <Button primary rounded >
+          <GoBell />
+          Click Me
+        </Button>
       </div>
       <div>
-        <Button> Clickc </Button>
+        <Button secondary outline rounded >
+          {" "}
+          Buy Now{" "}
+        </Button>
       </div>
       <div>
-        <Button> yabadabadooo </Button>
+        <Button success> See Deal! </Button>
       </div>
       <div>
-        <Button> ashd </Button>
+        <Button warning outline>
+          <GoCloudDownload />
+          {" "}
+          Hide Ads{" "}
+        </Button>
       </div>
       <div>
-        <Button> Demon slyarwe </Button>
+        <Button danger rounded>
+          <GoDatabase />
+          {" "}
+          Share{" "}
+        </Button>
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
