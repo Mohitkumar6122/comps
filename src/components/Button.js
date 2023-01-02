@@ -32,12 +32,6 @@ function Button({
 
   });
 
-  if (primary && secondary) {
-    throw new Error(
-      "Only one of the primary and secondary prop should be passed to Button Component"
-    );
-  }
-
   //* {...rest} passes all button related props directly 
   //* like mousehover, onclick, etc
   return <button className={classes} {...rest} >{children}</button>;
