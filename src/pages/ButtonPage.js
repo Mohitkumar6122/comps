@@ -1,20 +1,19 @@
 import React from "react";
-import Button from "./Button";
-import {GoBell, GoCloudDownload, GoDatabase} from 'react-icons/go'
+import Button from "../components/Button";
+import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 
-function App() {
-  
+function ButtonPage() {
   return (
     <div>
-      {/* <div className="text-3xl font-bold underline">App</div> */}
+      {/* <div className="text-3xl font-bold underline">ButtonPage</div> */}
       <div>
-        <Button primary rounded >
+        <Button primary rounded>
           <GoBell />
           Click Me
         </Button>
       </div>
       <div>
-        <Button secondary outline rounded >
+        <Button secondary outline rounded>
           {" "}
           Buy Now{" "}
         </Button>
@@ -24,20 +23,16 @@ function App() {
       </div>
       <div>
         <Button warning outline>
-          <GoCloudDownload />
-          {" "}
-          Hide Ads{" "}
+          <GoCloudDownload /> Hide Ads{" "}
         </Button>
       </div>
       <div>
         <Button danger rounded>
-          <GoDatabase />
-          {" "}
-          Share{" "}
+          <GoDatabase /> Share{" "}
         </Button>
       </div>
     </div>
   );
 }
 
-export default App;
+export default ButtonPage;
