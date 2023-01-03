@@ -1,34 +1,28 @@
 import React from "react";
-import ButtonPage from "./pages/ButtonPage";
-import Accordion from "./components/Accordion";
-
+import Dropdown from "./components/Dropdown";
 function App() {
-  const items = [
+  const options = [
     {
-      id: "adasd",
-      label: "What is React?",
-      content: "Front end JS Framework",
+      label: "The Color Red",
+      value: "red",
     },
     {
-      id: "adasfdgd",
-      label: "Why use React?",
-      content: "Favourite Front end JS Framework among developers",
+      label: "The Color Green",
+      value: "green",
     },
     {
-      id: "adasasdd",
-      label: "How do you use?",
-      content: "Use React by creating components ",
+      label: "A Shade of Blue",
+      value: "blue",
     },
     {
-      id: "adasdasd",
-      label: "Is redux neccessary for react?",
-      content:
-        "redux acts as a global store for react apps but it is not neccessary ",
+      label: "A Shade of Pink",
+      value: "pink",
     },
   ];
+
   return (
     <div>
-      <Accordion items={items} />
+      <Dropdown options = {options} />
     </div>
   );
 }
