@@ -1,5 +1,4 @@
 import React from "react";
-import ButtonPage from "./pages/ButtonPage";
 import Accordion from "./components/Accordion";
 
 function AccordionPage() {
