@@ -14,7 +14,7 @@ function Button({
 }) {
 
   //* Using Tailwind css in the project thats why using logic for classname styling
-  const classes = className(rest.className, "px-3 py-1.5 border flex items-center", {
+  const classes = className(rest.className, "px-3 py-1.5 border flex items-center mb-3", {
     // key : value (if false then ignore this key in the styling)
     "border-blue-500 bg-blue-500 text-white": primary,
     "border-gray-900 bg-gray-900 text-white": secondary,

@@ -31,11 +31,7 @@ function DropdownPage() {
         value={selection}
         onChange={handleSelection}
       />
-      <Dropdown
-        options={options}
-        value={selection}
-        onChange={handleSelection}
-      />
+      
     </div>
   );
 }
