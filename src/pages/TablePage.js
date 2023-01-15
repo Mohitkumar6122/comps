@@ -21,21 +21,23 @@ const dataConfig = [
   },
   {
     label: "Score",
-    render: (fruit) =>  fruit.score ,
-    sort: (a, b) => { return (a - b) }
-  }
+    render: (fruit) => fruit.score,
+    sort: (a, b) => {
+      return a - b;
+    },
+  },
 ];
 
-// generated the kew for rows in table 
+// generated the kew for rows in table
 // handling given to developer using table
 const keyFn = (fruit) => {
   // here fruit.name is being used as key
-  return fruit.name
-}
+  return fruit.name;
+};
 function TablePage() {
   return (
     <div>
-      <Table data={data} config={dataConfig}keyFn = {keyFn} />
+      <Table data={data} config={dataConfig} keyFn={keyFn} />
     </div>
   );
 }
