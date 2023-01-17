@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
 
 const data = [
   { name: "Orange", color: "bg-orange-500", score: 5 },
@@ -12,8 +12,9 @@ const data = [
 // makes it resuable and applies composition concept
 const dataConfig = [
   {
-    label: "Fruit",
+    label: "Name",
     render: (fruit) => fruit.name,
+    sortValue : (fruit) => fruit.name, 
   },
   {
     label: "Color",
@@ -23,13 +24,11 @@ const dataConfig = [
     label: "Score",
     render: (fruit) => fruit.score,
     // optional property for label use {header: prop}
-    header: () => <th className="bg-red-500">Score</th>,
+    // header: () => <th className="bg-red-500">Score</th>,
 
     // optional fxn to describe how to extract values for sorting when the 
     // column is clicked use sortValue: { prop }
-    sort: (a, b) => {
-      return a - b;
-    },
+    sortValue: (fruit) => fruit.score,
   },
 ];
 
@@ -43,7 +42,7 @@ const keyFn = (fruit) => {
 function TablePage() {
   return (
     <div>
-      <Table data={data} config={dataConfig} keyFn={keyFn} />
+      <SortableTable data={data} config={dataConfig} keyFn={keyFn} />
     </div>
   );
 }
