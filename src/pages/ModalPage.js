@@ -12,7 +12,7 @@ function ModalPage() {
   };
 
   const actionBar = (
-    <Button primary success onClick={handleCloseModal}>
+    <Button success onClick={handleCloseModal}>
       I Accept
     </Button>
   );

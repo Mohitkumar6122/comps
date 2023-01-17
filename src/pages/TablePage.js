@@ -22,18 +22,24 @@ const dataConfig = [
   {
     label: "Score",
     render: (fruit) => fruit.score,
+    // optional property for label use {header: prop}
+    header: () => <th className="bg-red-500">Score</th>,
+
+    // optional fxn to describe how to extract values for sorting when the 
+    // column is clicked use sortValue: { prop }
     sort: (a, b) => {
       return a - b;
     },
   },
 ];
 
-// generated the kew for rows in table
+// generates the key for rows in table
 // handling given to developer using table
 const keyFn = (fruit) => {
   // here fruit.name is being used as key
   return fruit.name;
 };
+
 function TablePage() {
   return (
     <div>
