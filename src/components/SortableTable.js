@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Table from "./Table";
+import { GoChevronUp, GoChevronDown } from "react-icons/go";
 
 function SortableTable(props) {
   // 2 pieces of state
@@ -13,6 +14,11 @@ function SortableTable(props) {
   const { config, data } = props;
 
   const handleClick = (label) => {
+    if (sortBy && sortBy !== label) {
+      setSortOrder("asc");
+      setSortBy(label);
+      return;
+    }
     switch (sortOrder) {
       case null:
         setSortOrder("asc");
@@ -39,8 +45,14 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {column.label} IS SORTABLE
+        <th
+          className="cursor-pointer hover:bg-gray-100"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center margin: auto">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
@@ -72,12 +84,30 @@ function SortableTable(props) {
     });
   }
 
-  return (
-    <div>
-      {sortOrder} - {sortBy}
-      <Table {...props} config={updatedConfig} data={sortedData} />
-    </div>
-  );
+  return <Table {...props} config={updatedConfig} data={sortedData} />;
 }
+
+// function to show sorting icons
+const getIcons = (label, sortBy, sortOrder) => {
+  if (label !== sortBy || sortOrder === null) {
+    return (
+      <div>
+        {" "}
+        <GoChevronUp /> <GoChevronDown />
+      </div>
+    );
+  } else if (sortOrder === "asc") {
+    return (
+      <div>
+        <GoChevronUp />
+      </div>
+    );
+  } else
+    return (
+      <div>
+        <GoChevronDown />
+      </div>
+    );
+};
 
 export default SortableTable;

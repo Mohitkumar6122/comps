@@ -6,6 +6,7 @@ const data = [
   { name: "Apple", color: "bg-red-500", score: 7 },
   { name: "Banana", color: "bg-yellow-500", score: 4 },
   { name: "Lime", color: "bg-green-500", score: 2 },
+  { name: "Cherry", color: "bg-red-900", score: 2.3 },
 ];
 
 // config file for column data for the table
@@ -14,7 +15,7 @@ const dataConfig = [
   {
     label: "Name",
     render: (fruit) => fruit.name,
-    sortValue : (fruit) => fruit.name, 
+    sortValue: (fruit) => fruit.name,
   },
   {
     label: "Color",
@@ -26,8 +27,13 @@ const dataConfig = [
     // optional property for label use {header: prop}
     // header: () => <th className="bg-red-500">Score</th>,
 
-    // optional fxn to describe how to extract values for sorting when the 
+    // optional fxn to describe how to extract values for sorting when the
     // column is clicked use sortValue: { prop }
+    sortValue: (fruit) => fruit.score,
+  },
+  {
+    label: "Scrore squared",
+    render: (fruit) => (fruit.score ** 2).toFixed(2),
     sortValue: (fruit) => fruit.score,
   },
 ];
