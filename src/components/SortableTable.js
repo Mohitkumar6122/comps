@@ -4,7 +4,6 @@ import { GoChevronUp, GoChevronDown } from "react-icons/go";
 
 function SortableTable(props) {
   // 2 pieces of state
-
   // 1 -> keep track of sort order (sortOrder)
   const [sortOrder, setSortOrder] = useState(null);
 
@@ -49,7 +48,7 @@ function SortableTable(props) {
           className="cursor-pointer hover:bg-gray-100"
           onClick={() => handleClick(column.label)}
         >
-          <div className="flex items-center margin: auto">
+          <div className="flex items-center">
             {getIcons(column.label, sortBy, sortOrder)}
             {column.label}
           </div>
